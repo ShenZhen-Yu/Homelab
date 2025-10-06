@@ -39,3 +39,22 @@ Password: LabPass123!
   ```bash
   ip -4 addr show
   ping 127.0.0.0
+
+
+Artifacts to produce next (planned)
+
+~/lab_artifacts/nmap_scan_results.txt (nmap output)
+
+~/lab_artifacts/pcap_first200.txt (small pcap textual export)
+
+~/lab_artifacts/pcap_summary_conversations.txt (tshark IP conv summary)
+
+screenshots/ping_kali_to_ubuntu.png
+
+Next steps
+
+Install nmap on Kali and tcpdump/tshark on Ubuntu.
+
+Run tcpdump on Ubuntu and run an nmap scan from Kali.
+
+Save outputs, summarize with tshark, commit artifacts to repo (small text summaries only), and push.
