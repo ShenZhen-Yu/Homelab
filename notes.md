@@ -58,3 +58,19 @@ Install nmap on Kali and tcpdump/tshark on Ubuntu.
 Run tcpdump on Ubuntu and run an nmap scan from Kali.
 
 Save outputs, summarize with tshark, commit artifacts to repo (small text summaries only), and push.
+
+## 2025-10-06 — Fixed APT repositories and Internet connectivity
+**Issue:** Kali couldn’t install packages because APT had no sources and no Internet.
+**Fix:** 
+- Added Adapter 2 (NAT) in VirtualBox for Internet.
+- Updated `/etc/apt/sources.list` to include:
+  `deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware`
+- Ran `sudo apt update` and installed `nmap`, `net-tools`, and `isc-dhcp-client`.
+
+**Verification:**
+- `ping http.kali.org` succeeded.
+- `nmap --version` displayed installed version.
+- `ifconfig` worked (from net-tools).
+
+**Next:** Use `nmap` to scan the Ubuntu VM and capture packets on Ubuntu.
+
