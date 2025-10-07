@@ -72,5 +72,29 @@ Save outputs, summarize with tshark, commit artifacts to repo (small text summar
 - `nmap --version` displayed installed version.
 - `ifconfig` worked (from net-tools).
 
+
+## 2025-10-06 — Ubuntu network setup (Internal + NAT)
+**Goal:** Ensure Ubuntu VM has the correct network adapters for lab & internet access.
+
+**What I did**
+- Verified VirtualBox network adapters:
+  - Adapter 1 = Internal Network (`lab-net` or `NatNetwork`) for VM-to-VM traffic.
+  - Adapter 2 = NAT for internet / apt updates (optional if needed).
+- Brought up the interface on Ubuntu and requested DHCP lease (if required).
+- Verified connectivity with `ip -4 addr show` and `ping -c 3 8.8.8.8`.
+- Confirmed Kali ↔ Ubuntu internal connectivity (`ping` from Kali succeeded).
+
+**Commands used**
+```bash
+# show interfaces & IPs
+ip -4 addr show
+
+# (if interface was down)
+sudo ip link set enp0s3 up         
+sudo dhclient enp0s3               
+
+# verify connectivity
+ping -c 3 8.8.8.8
+
 **Next:** Use `nmap` to scan the Ubuntu VM and capture packets on Ubuntu.
 
