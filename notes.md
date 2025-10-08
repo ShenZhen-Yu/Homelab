@@ -98,6 +98,8 @@ ping -c 3 8.8.8.8
 
 **Next:** Use `nmap` to scan the Ubuntu VM and capture packets on Ubuntu.
 
+
+
 ## 2025-10-06 — Fixed DHCP issue on Kali and Ubuntu (Internal Network)
 **Issue:** Both Kali and Ubuntu VMs were unable to receive IPv4 addresses, showing `169.254.x.x` (APIPA address).
 **Fix:**
