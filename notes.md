@@ -98,3 +98,18 @@ ping -c 3 8.8.8.8
 
 **Next:** Use `nmap` to scan the Ubuntu VM and capture packets on Ubuntu.
 
+## 2025-10-06 — Fixed DHCP issue on Kali and Ubuntu (Internal Network)
+**Issue:** Both Kali and Ubuntu VMs were unable to receive IPv4 addresses, showing `169.254.x.x` (APIPA address).
+**Fix:**
+- Verified VirtualBox settings to ensure both VMs used the same **Internal Network**.
+- Configured **static IPs** for both VMs on the internal network (`10.0.3.5` for Ubuntu, `10.0.3.10` for Kali).
+- Optionally, set up **dnsmasq** as a DHCP server on Kali for future DHCP needs.
+
+**Verification:**
+- `ip -4 addr show` showed valid IPs for both VMs.
+- Successfully pinged Kali from Ubuntu and vice versa.
+- Internet access verified on Kali.
+
+**Next step:** Proceed with running nmap scan and capturing packets.
+
+
