@@ -115,3 +115,18 @@ ping -c 3 8.8.8.8
 **Next step:** Proceed with running nmap scan and capturing packets.
 
 
+## 2025-10-06 — Working with Default Route and Internet Access for Kali and Ubuntu
+**Issue:** Initially, Kali and Ubuntu could not access the Internet when `eth0` was set to `10.0.3.1`.
+**Fix:**
+- Set the **default gateway** for NAT network for both VMs to **`10.0.3.2`** (acting as the gateway for Internet access via NAT).
+- **Kali** (`10.0.3.1`) and **Ubuntu** (`10.0.3.3`) use **`10.0.3.2`** as the default route to reach the **Internet**.
+
+**Verification:**
+- `ip route` shows **`10.0.3.2`** as the default gateway for both VMs.
+- Successfully pinged **8.8.8.8** (Internet) from Kali and Ubuntu.
+- Internal communication confirmed (ping between Kali and Ubuntu).
+
+**Next step:** Proceed with running `nmap` scan and capturing packets.
+
+
+
