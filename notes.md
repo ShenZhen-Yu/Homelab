@@ -129,4 +129,16 @@ ping -c 3 8.8.8.8
 **Next step:** Proceed with running `nmap` scan and capturing packets.
 
 
+## 2025-10-06 — Nmap Scan Results for Ubuntu
+
+**Objective:** Scan Ubuntu (`10.0.3.3`) for open ports and services.
+
+**Command Run:**
+```bash
+sudo nmap -sS 10.0.3.3
+Results:
+
+Port 80/tcp: open (HTTP)
+
+Next steps: Continue with packet capture and document results.
 
