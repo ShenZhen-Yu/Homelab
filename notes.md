@@ -95,7 +95,7 @@ sudo dhclient enp0s3
 
 # verify connectivity
 ping -c 3 8.8.8.8
-
+'''
 
 **Next:** Use `nmap` to scan the Ubuntu VM and capture packets on Ubuntu.
 
