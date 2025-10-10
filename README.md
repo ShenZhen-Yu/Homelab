@@ -50,20 +50,20 @@ The primary goals achieved so far:
 
 | VM | Interface | IP Address | Network Mode | Notes |
 |----|------------|-------------|---------------|-------|
-| Ubuntu Server | `enp0s3` | `127.0.0.0` | NAT Network (`NatNetwork`) | Target machine |
-| Kali Linux | `eth0` | `127.0.0.1` | NAT Network (`NatNetwork`) | Attacker machine |
+| Ubuntu Server | `enp0s3` | `10.0.3.3` | NAT Network (`NatNetwork`) | Target machine |
+| Kali Linux | `eth0` | `10.0.3.1` | NAT Network (`NatNetwork`) | Attacker machine |
 
 ✅ Both VMs are on the same subnet and can communicate directly.  
 Example configuration:
-Ubuntu IP: 127.0.0.0
-Kali IP: 127.0.0.1
+Ubuntu IP: 10.0.3.3
+Kali IP: 10.0.3.1
 
 ## 🧪 Connectivity Test
 
 **From Kali:**
 ```bash
-ping -c 4 127.0.0.0
+ping -c 4 10.0.3.3
 
 
 Result:
-64 bytes from <ubuntu-ip>: icmp_seq=1 ttl=64 time=0.431 ms
+64 bytes from 10.0.3.3: icmp_seq=1 ttl=64 time=0.431 ms
