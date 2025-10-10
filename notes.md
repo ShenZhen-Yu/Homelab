@@ -136,6 +136,7 @@ ping -c 3 8.8.8.8
 **Command Run:**
 ```bash
 sudo nmap -sS 10.0.3.3
+```
 Results:
 
 Port 80/tcp: open (HTTP)
