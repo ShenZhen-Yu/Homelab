@@ -142,3 +142,28 @@ Port 80/tcp: open (HTTP)
 
 Next steps: Continue with packet capture and document results.
 
+
+## 2025-10-06 — Packet Capture Analysis on Ubuntu (Command-line with `tcpdump`)
+**Objective:** Capture and analyze network traffic between Kali and Ubuntu using `tcpdump`.
+
+### Capture Overview:
+- **Tool Used:** tcpdump
+- **Captured Interfaces:** `enp0s3` (internal network), `eth1` (NAT interface)
+
+### Steps Taken:
+1. **Captured ICMP traffic** between Kali and Ubuntu (`ping` test).
+2. **Captured HTTP traffic** from Ubuntu (web server on port 80).
+3. **Captured ICMP traffic** for internet access (`ping 8.8.8.8` from Kali).
+
+### Key Findings:
+- **ICMP Traffic:**
+  - Ping requests and replies between Kali and Ubuntu were successfully captured.
+- **HTTP Traffic:**
+  - HTTP requests and responses between Ubuntu's web server and Kali were successfully captured.
+- **Internet Traffic:**
+  - Internet access traffic from Kali (via `10.0.3.2` as the gateway) was successfully captured.
+
+### Next Steps:
+- Analyze the **specific packet details** from the capture.
+- Investigate if there are any unexpected behaviors in the captured traffic.
+
