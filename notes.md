@@ -168,3 +168,20 @@ Next steps: Continue with packet capture and document results.
 - Analyze the **specific packet details** from the capture.
 - Investigate if there are any unexpected behaviors in the captured traffic.
 
+# 2025-10-06  -- Packet Capture Analysis with filtered
+
+## Objective
+Run nmap scans from Kali (10.0.3.1) against Ubuntu (10.0.3.3), capture network traffic on Ubuntu, and analyze results.
+
+## Commands run (representative)
+- tcpdump on Ubuntu:
+  `sudo tcpdump -i enp0s3 -nn host 10.0.3.1 -w nmap_from_kali.pcap`
+- nmap (kali):
+  `sudo nmap -sS -p22,80,443 -T4 -oN scans/02_syn_ports.txt 10.0.3.3`
+- HTTP fetch:
+  `curl -v http://10.0.3.3/`
+
+## Findings:
+- Open ports found: 80 (HTTP) — confirmed in pcap by SYN→SYN/ACK→RST pattern.
+- ICMP echo request/reply captured for ping tests.
+- HTTP GET/200 captured; response headers show `Server: Apache/2.x`.
